@@ -18,13 +18,7 @@ class DetailsPanel extends StatelessWidget {
           height: double.infinity,
           child: Column(
             children: [
-              if (data.flickrImages.isEmpty)
-                Expanded(
-                  flex: 1,
-                  child: Card(
-                    child: Center(child: Text("No Images")),
-                  ),
-                ),
+              /// Launch Details
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
@@ -32,6 +26,8 @@ class DetailsPanel extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline6,
                 ),
               ),
+
+              /// Action Buttons
               Row(
                 children: [
                   if (data.articleLink.isNotEmpty)
@@ -50,6 +46,17 @@ class DetailsPanel extends StatelessWidget {
                     ),
                 ],
               ),
+
+              /// Images not visible
+              if (data.flickrImages.isEmpty)
+                Expanded(
+                  flex: 1,
+                  child: Card(
+                    child: Center(child: Text("No Images")),
+                  ),
+                ),
+
+              /// Images are visible
               if (data.flickrImages.isNotEmpty)
                 Expanded(
                   flex: 1,
