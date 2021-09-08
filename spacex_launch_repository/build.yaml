@@ -3,8 +3,10 @@ targets:
     builders:
       artemis:
         options:
-          fragments_glob: lib/fragments/**.graphql
           schema_mapping:
             - schema: lib/schema.graphql
-              queries_glob: lib/{queries,mutations}/**.graphql
-              output: 'lib/generated/graphql_api.dart'              
+              queries_glob: lib/queries/**.graphql
+              output: 'lib/generated/graphql_api.dart'
+          scalar_mapping:
+            - graphql_type: Date
+              dart_type: DateTime
