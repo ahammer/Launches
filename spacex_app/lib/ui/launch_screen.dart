@@ -28,29 +28,37 @@ class LaunchScreen extends StatelessWidget {
           }
 
           if (data.hasLoaded) {
-            return Padding(
-              padding: const EdgeInsets.all(32.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: PastLaunchesList(data.launches),
-                  ),
-                  Container(
-                    width: 16,
-                  ),
-                  locateAndBuild<LaunchScreenState>(
-                      (ctx, state) => state._selection == null
-                          ? Expanded(child: Container())
-                          : Expanded(
-                              child: AnimatedSwitcher(
-                                  duration: Duration(milliseconds: 200),
-                                  child: DetailsPanel(
-                                    state._selection!,
-                                    key: ValueKey(state._selection),
-                                  ))))
-                ],
+            final children = [
+              Expanded(
+                child: PastLaunchesList(data.launches),
               ),
-            );
+              Container(
+                width: 16,
+              ),
+              locateAndBuild<LaunchScreenState>(
+                  (ctx, state) => state._selection == null
+                      ? Expanded(child: Container())
+                      : Expanded(
+                          child: AnimatedSwitcher(
+                              duration: Duration(milliseconds: 200),
+                              child: DetailsPanel(
+                                state._selection!,
+                                key: ValueKey(state._selection),
+                              ))))
+            ];
+
+            return LayoutBuilder(builder: (ctx, constraints) {
+              if (constraints.maxWidth > constraints.maxHeight)
+                return Padding(
+                  padding: const EdgeInsets.all(32.0),
+                  child: Row(children: children),
+                );
+              else
+                return Padding(
+                  padding: const EdgeInsets.all(32.0),
+                  child: Column(children: children),
+                );
+            });
           }
 
           return Center(

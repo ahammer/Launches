@@ -23,7 +23,6 @@ class DetailsPanel extends StatelessWidget {
                   flex: 1,
                   child: Container(
                       child: PageView(
-                    allowImplicitScrolling: true,
                     scrollDirection: Axis.horizontal,
                     children: data.flickrImages
                         .map((e) => FadeInImage.memoryNetwork(
