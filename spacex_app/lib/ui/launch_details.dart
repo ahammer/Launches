@@ -18,20 +18,6 @@ class DetailsPanel extends StatelessWidget {
           height: double.infinity,
           child: Column(
             children: [
-              if (data.flickrImages.isNotEmpty)
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                      child: PageView(
-                    scrollDirection: Axis.horizontal,
-                    children: data.flickrImages
-                        .map((e) => FadeInImage.memoryNetwork(
-                              placeholder: kTransparentImage,
-                              image: e,
-                            ))
-                        .toList(),
-                  )),
-                ),
               if (data.flickrImages.isEmpty)
                 Expanded(
                   flex: 1,
@@ -63,7 +49,21 @@ class DetailsPanel extends StatelessWidget {
                       child: Text("Video"),
                     ),
                 ],
-              )
+              ),
+              if (data.flickrImages.isNotEmpty)
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                      child: PageView(
+                    scrollDirection: Axis.horizontal,
+                    children: data.flickrImages
+                        .map((e) => FadeInImage.memoryNetwork(
+                              placeholder: kTransparentImage,
+                              image: e,
+                            ))
+                        .toList(),
+                  )),
+                ),
             ],
           )));
 }
