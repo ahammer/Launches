@@ -16,11 +16,11 @@ class GetPastLaunches$Query$Launch$LaunchSite extends JsonSerializable
           Map<String, dynamic> json) =>
       _$GetPastLaunches$Query$Launch$LaunchSiteFromJson(json);
 
-  @JsonKey(name: 'site_name_long')
-  String? siteNameLong;
+  @JsonKey(name: 'site_name')
+  String? siteName;
 
   @override
-  List<Object?> get props => [siteNameLong];
+  List<Object?> get props => [siteName];
   @override
   Map<String, dynamic> toJson() =>
       _$GetPastLaunches$Query$Launch$LaunchSiteToJson(this);
@@ -41,126 +41,14 @@ class GetPastLaunches$Query$Launch$LaunchLinks extends JsonSerializable
   @JsonKey(name: 'video_link')
   String? videoLink;
 
+  @JsonKey(name: 'flickr_images')
+  List<String?>? flickrImages;
+
   @override
-  List<Object?> get props => [articleLink, videoLink];
+  List<Object?> get props => [articleLink, videoLink, flickrImages];
   @override
   Map<String, dynamic> toJson() =>
       _$GetPastLaunches$Query$Launch$LaunchLinksToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore$Core
-    extends JsonSerializable with EquatableMixin {
-  GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore$Core();
-
-  factory GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore$Core.fromJson(
-          Map<String, dynamic> json) =>
-      _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore$CoreFromJson(
-          json);
-
-  @JsonKey(name: 'reuse_count')
-  int? reuseCount;
-
-  String? status;
-
-  @override
-  List<Object?> get props => [reuseCount, status];
-  @override
-  Map<String, dynamic> toJson() =>
-      _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore$CoreToJson(
-          this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore
-    extends JsonSerializable with EquatableMixin {
-  GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore();
-
-  factory GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore.fromJson(
-          Map<String, dynamic> json) =>
-      _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCoreFromJson(
-          json);
-
-  int? flight;
-
-  GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore$Core?
-      core;
-
-  @override
-  List<Object?> get props => [flight, core];
-  @override
-  Map<String, dynamic> toJson() =>
-      _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCoreToJson(
-          this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage
-    extends JsonSerializable with EquatableMixin {
-  GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage();
-
-  factory GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage.fromJson(
-          Map<String, dynamic> json) =>
-      _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStageFromJson(
-          json);
-
-  List<GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore?>?
-      cores;
-
-  @override
-  List<Object?> get props => [cores];
-  @override
-  Map<String, dynamic> toJson() =>
-      _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStageToJson(
-          this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage$Payload
-    extends JsonSerializable with EquatableMixin {
-  GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage$Payload();
-
-  factory GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage$Payload.fromJson(
-          Map<String, dynamic> json) =>
-      _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage$PayloadFromJson(
-          json);
-
-  @JsonKey(name: 'payload_type')
-  String? payloadType;
-
-  @JsonKey(name: 'payload_mass_kg')
-  double? payloadMassKg;
-
-  @JsonKey(name: 'payload_mass_lbs')
-  double? payloadMassLbs;
-
-  @override
-  List<Object?> get props => [payloadType, payloadMassKg, payloadMassLbs];
-  @override
-  Map<String, dynamic> toJson() =>
-      _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage$PayloadToJson(
-          this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage
-    extends JsonSerializable with EquatableMixin {
-  GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage();
-
-  factory GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage.fromJson(
-          Map<String, dynamic> json) =>
-      _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStageFromJson(
-          json);
-
-  List<GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage$Payload?>?
-      payloads;
-
-  @override
-  List<Object?> get props => [payloads];
-  @override
-  Map<String, dynamic> toJson() =>
-      _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStageToJson(
-          this);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -175,15 +63,8 @@ class GetPastLaunches$Query$Launch$LaunchRocket extends JsonSerializable
   @JsonKey(name: 'rocket_name')
   String? rocketName;
 
-  @JsonKey(name: 'first_stage')
-  GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage? firstStage;
-
-  @JsonKey(name: 'second_stage')
-  GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage?
-      secondStage;
-
   @override
-  List<Object?> get props => [rocketName, firstStage, secondStage];
+  List<Object?> get props => [rocketName];
   @override
   Map<String, dynamic> toJson() =>
       _$GetPastLaunches$Query$Launch$LaunchRocketToJson(this);
@@ -235,9 +116,19 @@ class GetPastLaunches$Query$Launch extends JsonSerializable
 
   List<GetPastLaunches$Query$Launch$Ship?>? ships;
 
+  @JsonKey(name: 'mission_id')
+  List<String?>? missionId;
+
   @override
-  List<Object?> get props =>
-      [missionName, launchDateLocal, launchSite, links, rocket, ships];
+  List<Object?> get props => [
+        missionName,
+        launchDateLocal,
+        launchSite,
+        links,
+        rocket,
+        ships,
+        missionId
+      ];
   @override
   Map<String, dynamic> toJson() => _$GetPastLaunches$Query$LaunchToJson(this);
 }
@@ -270,10 +161,7 @@ final GET_PAST_LAUNCHES_QUERY_DOCUMENT = DocumentNode(definitions: [
             arguments: [
               ArgumentNode(
                   name: NameNode(value: 'limit'),
-                  value: IntValueNode(value: '100')),
-              ArgumentNode(
-                  name: NameNode(value: 'offset'),
-                  value: IntValueNode(value: '0'))
+                  value: IntValueNode(value: '100'))
             ],
             directives: [],
             selectionSet: SelectionSetNode(selections: [
@@ -296,7 +184,7 @@ final GET_PAST_LAUNCHES_QUERY_DOCUMENT = DocumentNode(definitions: [
                   directives: [],
                   selectionSet: SelectionSetNode(selections: [
                     FieldNode(
-                        name: NameNode(value: 'site_name_long'),
+                        name: NameNode(value: 'site_name'),
                         alias: null,
                         arguments: [],
                         directives: [],
@@ -319,6 +207,12 @@ final GET_PAST_LAUNCHES_QUERY_DOCUMENT = DocumentNode(definitions: [
                         alias: null,
                         arguments: [],
                         directives: [],
+                        selectionSet: null),
+                    FieldNode(
+                        name: NameNode(value: 'flickr_images'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
                         selectionSet: null)
                   ])),
               FieldNode(
@@ -332,78 +226,7 @@ final GET_PAST_LAUNCHES_QUERY_DOCUMENT = DocumentNode(definitions: [
                         alias: null,
                         arguments: [],
                         directives: [],
-                        selectionSet: null),
-                    FieldNode(
-                        name: NameNode(value: 'first_stage'),
-                        alias: null,
-                        arguments: [],
-                        directives: [],
-                        selectionSet: SelectionSetNode(selections: [
-                          FieldNode(
-                              name: NameNode(value: 'cores'),
-                              alias: null,
-                              arguments: [],
-                              directives: [],
-                              selectionSet: SelectionSetNode(selections: [
-                                FieldNode(
-                                    name: NameNode(value: 'flight'),
-                                    alias: null,
-                                    arguments: [],
-                                    directives: [],
-                                    selectionSet: null),
-                                FieldNode(
-                                    name: NameNode(value: 'core'),
-                                    alias: null,
-                                    arguments: [],
-                                    directives: [],
-                                    selectionSet: SelectionSetNode(selections: [
-                                      FieldNode(
-                                          name: NameNode(value: 'reuse_count'),
-                                          alias: null,
-                                          arguments: [],
-                                          directives: [],
-                                          selectionSet: null),
-                                      FieldNode(
-                                          name: NameNode(value: 'status'),
-                                          alias: null,
-                                          arguments: [],
-                                          directives: [],
-                                          selectionSet: null)
-                                    ]))
-                              ]))
-                        ])),
-                    FieldNode(
-                        name: NameNode(value: 'second_stage'),
-                        alias: null,
-                        arguments: [],
-                        directives: [],
-                        selectionSet: SelectionSetNode(selections: [
-                          FieldNode(
-                              name: NameNode(value: 'payloads'),
-                              alias: null,
-                              arguments: [],
-                              directives: [],
-                              selectionSet: SelectionSetNode(selections: [
-                                FieldNode(
-                                    name: NameNode(value: 'payload_type'),
-                                    alias: null,
-                                    arguments: [],
-                                    directives: [],
-                                    selectionSet: null),
-                                FieldNode(
-                                    name: NameNode(value: 'payload_mass_kg'),
-                                    alias: null,
-                                    arguments: [],
-                                    directives: [],
-                                    selectionSet: null),
-                                FieldNode(
-                                    name: NameNode(value: 'payload_mass_lbs'),
-                                    alias: null,
-                                    arguments: [],
-                                    directives: [],
-                                    selectionSet: null)
-                              ]))
-                        ]))
+                        selectionSet: null)
                   ])),
               FieldNode(
                   name: NameNode(value: 'ships'),
@@ -429,7 +252,13 @@ final GET_PAST_LAUNCHES_QUERY_DOCUMENT = DocumentNode(definitions: [
                         arguments: [],
                         directives: [],
                         selectionSet: null)
-                  ]))
+                  ])),
+              FieldNode(
+                  name: NameNode(value: 'mission_id'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null)
             ]))
       ]))
 ]);

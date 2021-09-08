@@ -11,13 +11,13 @@ GetPastLaunches$Query$Launch$LaunchSite
     _$GetPastLaunches$Query$Launch$LaunchSiteFromJson(
         Map<String, dynamic> json) {
   return GetPastLaunches$Query$Launch$LaunchSite()
-    ..siteNameLong = json['site_name_long'] as String?;
+    ..siteName = json['site_name'] as String?;
 }
 
 Map<String, dynamic> _$GetPastLaunches$Query$Launch$LaunchSiteToJson(
         GetPastLaunches$Query$Launch$LaunchSite instance) =>
     <String, dynamic>{
-      'site_name_long': instance.siteNameLong,
+      'site_name': instance.siteName,
     };
 
 GetPastLaunches$Query$Launch$LaunchLinks
@@ -25,7 +25,10 @@ GetPastLaunches$Query$Launch$LaunchLinks
         Map<String, dynamic> json) {
   return GetPastLaunches$Query$Launch$LaunchLinks()
     ..articleLink = json['article_link'] as String?
-    ..videoLink = json['video_link'] as String?;
+    ..videoLink = json['video_link'] as String?
+    ..flickrImages = (json['flickr_images'] as List<dynamic>?)
+        ?.map((e) => e as String?)
+        .toList();
 }
 
 Map<String, dynamic> _$GetPastLaunches$Query$Launch$LaunchLinksToJson(
@@ -33,125 +36,20 @@ Map<String, dynamic> _$GetPastLaunches$Query$Launch$LaunchLinksToJson(
     <String, dynamic>{
       'article_link': instance.articleLink,
       'video_link': instance.videoLink,
+      'flickr_images': instance.flickrImages,
     };
-
-GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore$Core
-    _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore$CoreFromJson(
-        Map<String, dynamic> json) {
-  return GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore$Core()
-    ..reuseCount = json['reuse_count'] as int?
-    ..status = json['status'] as String?;
-}
-
-Map<String, dynamic>
-    _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore$CoreToJson(
-            GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore$Core
-                instance) =>
-        <String, dynamic>{
-          'reuse_count': instance.reuseCount,
-          'status': instance.status,
-        };
-
-GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore
-    _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCoreFromJson(
-        Map<String, dynamic> json) {
-  return GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore()
-    ..flight = json['flight'] as int?
-    ..core = json['core'] == null
-        ? null
-        : GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore$Core
-            .fromJson(json['core'] as Map<String, dynamic>);
-}
-
-Map<String, dynamic>
-    _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCoreToJson(
-            GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore
-                instance) =>
-        <String, dynamic>{
-          'flight': instance.flight,
-          'core': instance.core?.toJson(),
-        };
-
-GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage
-    _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStageFromJson(
-        Map<String, dynamic> json) {
-  return GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage()
-    ..cores = (json['cores'] as List<dynamic>?)
-        ?.map((e) => e == null
-            ? null
-            : GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage$LaunchRocketFirstStageCore
-                .fromJson(e as Map<String, dynamic>))
-        .toList();
-}
-
-Map<String, dynamic>
-    _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStageToJson(
-            GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage
-                instance) =>
-        <String, dynamic>{
-          'cores': instance.cores?.map((e) => e?.toJson()).toList(),
-        };
-
-GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage$Payload
-    _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage$PayloadFromJson(
-        Map<String, dynamic> json) {
-  return GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage$Payload()
-    ..payloadType = json['payload_type'] as String?
-    ..payloadMassKg = (json['payload_mass_kg'] as num?)?.toDouble()
-    ..payloadMassLbs = (json['payload_mass_lbs'] as num?)?.toDouble();
-}
-
-Map<String, dynamic>
-    _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage$PayloadToJson(
-            GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage$Payload
-                instance) =>
-        <String, dynamic>{
-          'payload_type': instance.payloadType,
-          'payload_mass_kg': instance.payloadMassKg,
-          'payload_mass_lbs': instance.payloadMassLbs,
-        };
-
-GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage
-    _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStageFromJson(
-        Map<String, dynamic> json) {
-  return GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage()
-    ..payloads = (json['payloads'] as List<dynamic>?)
-        ?.map((e) => e == null
-            ? null
-            : GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage$Payload
-                .fromJson(e as Map<String, dynamic>))
-        .toList();
-}
-
-Map<String, dynamic>
-    _$GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStageToJson(
-            GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage
-                instance) =>
-        <String, dynamic>{
-          'payloads': instance.payloads?.map((e) => e?.toJson()).toList(),
-        };
 
 GetPastLaunches$Query$Launch$LaunchRocket
     _$GetPastLaunches$Query$Launch$LaunchRocketFromJson(
         Map<String, dynamic> json) {
   return GetPastLaunches$Query$Launch$LaunchRocket()
-    ..rocketName = json['rocket_name'] as String?
-    ..firstStage = json['first_stage'] == null
-        ? null
-        : GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketFirstStage
-            .fromJson(json['first_stage'] as Map<String, dynamic>)
-    ..secondStage = json['second_stage'] == null
-        ? null
-        : GetPastLaunches$Query$Launch$LaunchRocket$LaunchRocketSecondStage
-            .fromJson(json['second_stage'] as Map<String, dynamic>);
+    ..rocketName = json['rocket_name'] as String?;
 }
 
 Map<String, dynamic> _$GetPastLaunches$Query$Launch$LaunchRocketToJson(
         GetPastLaunches$Query$Launch$LaunchRocket instance) =>
     <String, dynamic>{
       'rocket_name': instance.rocketName,
-      'first_stage': instance.firstStage?.toJson(),
-      'second_stage': instance.secondStage?.toJson(),
     };
 
 GetPastLaunches$Query$Launch$Ship _$GetPastLaunches$Query$Launch$ShipFromJson(
@@ -194,6 +92,9 @@ GetPastLaunches$Query$Launch _$GetPastLaunches$Query$LaunchFromJson(
             ? null
             : GetPastLaunches$Query$Launch$Ship.fromJson(
                 e as Map<String, dynamic>))
+        .toList()
+    ..missionId = (json['mission_id'] as List<dynamic>?)
+        ?.map((e) => e as String?)
         .toList();
 }
 
@@ -206,6 +107,7 @@ Map<String, dynamic> _$GetPastLaunches$Query$LaunchToJson(
       'links': instance.links?.toJson(),
       'rocket': instance.rocket?.toJson(),
       'ships': instance.ships?.map((e) => e?.toJson()).toList(),
+      'mission_id': instance.missionId,
     };
 
 GetPastLaunches$Query _$GetPastLaunches$QueryFromJson(

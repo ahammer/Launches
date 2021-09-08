@@ -27,7 +27,9 @@ dependencies:
   dart_board_core:
   dart_board_space_scene:
   dart_board_theme:
-
+  transparent_image:
+  url_launcher:
+    
   spacex_launch_repository:
     path: ../spacex_launch_repository
 
